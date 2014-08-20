@@ -62,7 +62,7 @@ public class VideoController {
 	public @ResponseBody Video addVideo(@RequestBody Video v){
 		if(v.getId() == 0)
             v.setId(atomicLong.incrementAndGet());
-        v.setDataUrl(getUrlBaseForLocalServer()+getDataUrl(v.getId()));
+        v.setDataUrl(getDataUrl(v.getId()));
         videos.put(v.getId(), v);
 		return v;
 	}
